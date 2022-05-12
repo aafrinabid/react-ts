@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import classes from './TodoItem.module.css';
 
-const TodoItem:React.FC<{text:string}>=(props)=> {
+const TodoItem:React.FC<{text:string,name:string,removeTodo:(event:React.MouseEvent)=>void}>=(props)=> {
   return (
-    <li> {props.text}</li>
+    <li className={classes.item}> {props.text} by {props.name} <button onClick={props.removeTodo}>remove Todo</button> </li>
   )
 }
 
